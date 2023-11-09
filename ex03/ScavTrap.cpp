@@ -3,8 +3,8 @@
 ScavTrap::ScavTrap(void)
 {
 	this->_name = "anonymous";
-	this->_health = 50;
-	this->_energy = 100;
+	this->_health = 100;
+	this->_energy = 50;
 	this->_attack = 20;
 	std::cout << "ScavTrap " << this->_name << " default constructor called" << std::endl;
 	return ;
@@ -12,8 +12,8 @@ ScavTrap::ScavTrap(void)
 ScavTrap::ScavTrap(std::string name)
 {
 	this->_name = name;
-	this->_health = 50;
-	this->_energy = 100;
+	this->_health = 100;
+	this->_energy = 50;
 	this->_attack = 20;
 	std::cout << "ScavTrap " << this->_name << " constructor called" << std::endl;
 	return ;

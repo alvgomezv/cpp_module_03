@@ -5,10 +5,12 @@ int main(void)
 {
 	DiamondTrap	diamondTrap("Pepe");
 
-	diamondTrap.printStats();
 	
+	diamondTrap.printStats();
+
 	diamondTrap.attack("Jose");
 	diamondTrap.whoAmI();
+
 	
 	return 0;
 }

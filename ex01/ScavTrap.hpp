@@ -1,5 +1,5 @@
 #ifndef SCAVTRAP_HPP
-# define SCATRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
