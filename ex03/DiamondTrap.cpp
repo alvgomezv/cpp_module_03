@@ -1,24 +1,19 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : ClapTrap("anonymous_clap_name"), ScavTrap("anonymous_clap_name"), FragTrap("anonymous_clap_name")
 {
 	this->_name = "anonymous";
-	this->ClapTrap::_name = "anonymous_clap_name";
-	this->_health = FragTrap::_health;
-	this->_energy = ScavTrap::_energy;
-	this->_attack = FragTrap::_attack;
+	ClapTrap::_name = "anonymous_clap_name";
+	this->_energy = 50; // have to do it manualy, the ClapTrap values are overwritten by FragTrap
 	std::cout << "DiamondTrap " << this->_name << " default constructor called" << std::endl;
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name") , ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
 {
 	this->_name = name;
-	this->ClapTrap::_name = name + "_clap_name";
-	std::cout << "Attack: " << FragTrap::_attack << ", " << ScavTrap::_attack <<  std::endl;
-	this->_health = FragTrap::_health;
-	this->_energy = ScavTrap::_energy;
-	this->_attack = FragTrap::_attack;
+	ClapTrap::_name = name + "_clap_name";
+	this->_energy = 50;
 	std::cout << "DiamondTrap " << this->_name << " constructor called" << std::endl;
 	return ;
 }
@@ -43,11 +38,6 @@ DiamondTrap::~DiamondTrap(void)
 {
 	std::cout << "DiamondTrap " << this->_name << " destructor called" << std::endl;
 	return ;
-}
-
-void	DiamondTrap::attack(std::string const& target)
-{
-	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI(void)

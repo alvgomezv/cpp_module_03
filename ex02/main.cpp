@@ -8,10 +8,12 @@ int main(void)
 	ClapTrap a("Pepe");
 	ScavTrap b("Juan");
 	FragTrap c("Paco");
+	FragTrap d(c);
 
 	a.printStats();
 	b.printStats();
 	c.printStats();
+	d = c;
 
 	b.attack(c.getName());
 	c.takeDamage(20);

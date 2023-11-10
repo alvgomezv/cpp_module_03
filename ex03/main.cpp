@@ -3,14 +3,13 @@
 
 int main(void)
 {
-	DiamondTrap	diamondTrap("Pepe");
+	DiamondTrap	a("Pepe");
+	DiamondTrap b;
 
-	
-	diamondTrap.printStats();
+	a.printStats();
 
-	diamondTrap.attack("Jose");
-	diamondTrap.whoAmI();
+	a.attack("Jose");
+	a.whoAmI();
 
-	
 	return 0;
 }

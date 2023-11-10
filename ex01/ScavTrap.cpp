@@ -9,7 +9,7 @@ ScavTrap::ScavTrap(void)
 	std::cout << "ScavTrap " << this->_name << " default constructor called" << std::endl;
 	return ;
 }
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_name = name;
 	this->_health = 100;
@@ -39,6 +39,27 @@ ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap " << this->_name << " destructor called" << std::endl;
 	return ;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->_health == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " is dead and cannot attack " << target << std::endl;
+		return ;
+	}
+	if (this->_energy == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " has no energy and cannot attack " << target << std::endl;
+		return ;
+	}
+	this->_energy -= 1;
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attack << " points of damage!" << std::endl;
+	if (this->_energy < 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " has no energy left" << std::endl;
+		this->_energy = 0;
+	}
 }
 
 void	ScavTrap::guardGate(void)

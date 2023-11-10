@@ -15,7 +15,7 @@ FragTrap::FragTrap(std::string name)
 	this->_health = 100;
 	this->_energy = 100;
 	this->_attack = 30;
-	std::cout << "FragTrap " << this->_name << " constructor called" << std::endl;
+	std::cout << "FragTrap " << this->_name << " constructor called: "  << std::endl;
 	return ;
 }
 
